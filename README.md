@@ -2,8 +2,8 @@
 
 Source codes from youtube chnage https://www.youtube.com/@ImpossibleAngular
 
-- [Dynamic Providers](#DynamicProviders)
-- [Dynamic Injector](#DynamicInjector)
+- [Dynamic Providers](#Dynamic-Providers)
+- [Dynamic Injector](#Dynamic-Injector)
 
 ## Dynamic Providers
 

@@ -4,7 +4,7 @@ Source codes from youtube chnage https://www.youtube.com/@ImpossibleAngular
 
 - [Dynamic Providers](#Dynamic-Providers)
 - [Dynamic Injector](#Dynamic-Injector)
-- [Dynamic Input](#Dynamic-Input)
+- [Dynamic @Input](#Dynamic-Input)
 
 ## Dynamic Providers
 
@@ -183,7 +183,7 @@ export class DelMessageComponent {
 }
 ```
 
-## Dynamic Input
+## Dynamic @Input
 
 **Briefly**: When applying @Input to a component created via ViewContainerRef, you need to use the setInput() method. However, this approach does not dynamically update the @Input properties in the same way that template-based bindings do.
 

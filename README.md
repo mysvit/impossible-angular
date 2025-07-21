@@ -100,7 +100,7 @@ export class WidgetContainerComponent {
 
 ## Dynamic Injector
 
-**Briefly**: Service injection to class's method or event
+**Briefly**: Service injection inside class's method or event
 Using global variable and app injector inside bootstrapApplication(...)
 
 **Usage:**

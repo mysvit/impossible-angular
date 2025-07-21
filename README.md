@@ -4,13 +4,14 @@ Source codes from youtube chnage https://www.youtube.com/@ImpossibleAngular
 
 - [Dynamic Providers](#Dynamic-Providers)
 - [Dynamic Injector](#Dynamic-Injector)
+- [Dynamic Inut](#Dynamic-Input)
 
 ## Dynamic Providers
 
 **Briefly**: Services dynamically injected into providers. Directive share providers with a component and
 `createComponent()` method can add directive to component in runtime.
 
-**Usage:** 
+**Usage:**
 ```HTML
 <app-widget-container></app-widget-container>`
 ```
@@ -72,7 +73,7 @@ export class WidgetComponent {
 }
 ```
 
-Root component `app-widget-container` where widget component dynamically created with any providers. 
+Root component `app-widget-container` where widget component dynamically created with any providers.
 
 ```TypeScript
 @Component({
@@ -179,5 +180,72 @@ export class DelMessageComponent {
   click() {
     setMessageCount(-1)
   }
+}
+```
+
+## Dynamic Input
+
+**Briefly**: When applying @Input to a component created via ViewContainerRef, you need to use the setInput() method. However, this approach does not dynamically update the @Input properties in the same way that template-based bindings do.
+
+How to make it possible?
+
+**Usage:**
+```HTML
+<app-dyn-input></app-dyn-input>`
+```
+
+`CountLabelComponent` update `@count` input property.  
+
+```TypeScript
+@Component({
+  selector: 'app-count-label',
+  template: `Created in <b>{{ label() }}</b>: Count: {{ count() }}`,
+  styles: `:host {
+    display: block;
+  }`
+})
+export class CountLabelComponent {
+  label = input('Template')
+  count = model(0)
+
+  count$: WritableSignal<number> = signal(0)
+
+  constructor() {
+    effect(() => {
+      this.count.set(this.count$())
+    })
+  }
+}
+```
+
+Consider `DynInputComponent`, where `CountLabelComponent` is created within the template and separately through `ViewContainerRef`. `dynCount` is then assigned to both of these instances.
+
+```TypeScript
+@Component({
+  selector: 'app-dyn-input',
+  imports: [
+    CountLabelComponent
+  ],
+  template: `
+    <button (click)="countClick()">Count ++</button>
+    <app-count-label [count]="dynCount()"></app-count-label>
+    <button (click)="addLabelClick()">Add cnt</button>
+  `
+})
+export class DynInputComponent {
+
+  dynCount = signal(0)
+  readonly viewContainerRef = inject(ViewContainerRef)
+
+  countClick() {
+    this.dynCount.update(v => ++v)
+  }
+
+  addLabelClick() {
+    const comp = this.viewContainerRef.createComponent(CountLabelComponent)
+    comp.setInput('label', 'ViewContainerRef')
+    comp.instance.count$ = this.dynCount
+  }
+
 }
 ```

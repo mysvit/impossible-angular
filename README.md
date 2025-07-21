@@ -4,7 +4,7 @@ Source codes from youtube chnage https://www.youtube.com/@ImpossibleAngular
 
 - [Dynamic Providers](#Dynamic-Providers)
 - [Dynamic Injector](#Dynamic-Injector)
-- [Dynamic Inut](#Dynamic-Input)
+- [Dynamic Input](#Dynamic-Input)
 
 ## Dynamic Providers
 

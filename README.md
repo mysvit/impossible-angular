@@ -5,6 +5,7 @@ Source codes from youtube chnage https://www.youtube.com/@ImpossibleAngular
 - [Dynamic Providers](#Dynamic-Providers)
 - [Dynamic Injector](#Dynamic-Injector)
 - [Dynamic @Input](#Dynamic-Input)
+- [@Self vs @Host](#Self-vs-Host)
 
 ## Dynamic Providers
 
@@ -191,10 +192,10 @@ How to make it possible?
 
 **Usage:**
 ```HTML
-<app-dyn-input></app-dyn-input>`
+<app-dyn-input></app-dyn-input>
 ```
 
-`CountLabelComponent` update `@count` input property.  
+`CountLabelComponent` update `@count` input property.
 
 ```TypeScript
 @Component({
@@ -246,6 +247,86 @@ export class DynInputComponent {
     comp.setInput('label', 'ViewContainerRef')
     comp.instance.count$ = this.dynCount
   }
+
+}
+```
+
+
+## Dynamic @Input
+
+**Briefly**: One crucial difference between `self` and `host` parameters for service injection it is projection.
+
+How to make it possible?
+
+**Usage:**
+```HTML
+<app-item appTestService label="Parent" color="grey">
+  <app-item appTestService label="Projected 1st level" color="skyblue">
+    <app-item label="Projected 2nd level" color="lime">
+    </app-item>
+  </app-item>
+</app-item>
+
+```
+
+`TestService` that generates an ID for each instance and `appTestService` directive for dynamic provider.
+
+
+```ts
+@Injectable()
+export class TestService {
+  readonly ID: string
+
+  constructor() {
+    this.ID = 'ID-' + Math.random().toString(36).substring(2, 7).toUpperCase()
+  }
+}
+
+@Directive({
+  selector: '[appTestService]',
+  providers: [TestService]
+})
+export class AppTestServiceDirective {
+}
+```
+
+The `ItemComponent` with child recursive component and `ng-content` for projection.
+
+```ts
+@Component({
+  selector: 'app-item',
+  template: `
+    <div [style.background]="color()">
+      <h2>{{ label() }}</h2>
+      <h3>Self: {{ self?.ID ?? 'NULL' }}</h3>
+      <h3>Host: {{ host?.ID ?? 'NULL' }}</h3>
+      @if (isParent()) {
+        <app-item label="Child" [isParent]="false"></app-item>
+      }
+      <ng-content></ng-content>
+    </div>
+  `,
+  imports: [],
+  styles: `
+    h2, h3 {
+      margin: 2px;
+    }
+
+    div {
+      padding: 10px;
+      margin: 10px;
+      border: 2px gray solid;
+    }
+  `
+})
+export class ItemComponent {
+
+  label = input('')
+  color = input('white')
+  isParent = input(true)
+
+  self = inject(TestService, {self: true, optional: true})
+  host = inject(TestService, {host: true, optional: true})
 
 }
 ```

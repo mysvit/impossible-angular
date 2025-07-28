@@ -252,7 +252,7 @@ export class DynInputComponent {
 ```
 
 
-## Dynamic @Input
+## @Self vs @Host
 
 **Briefly**: One crucial difference between `self` and `host` parameters for service injection it is projection.
 

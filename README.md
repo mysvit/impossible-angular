@@ -6,7 +6,7 @@ Source codes from youtube chnage https://www.youtube.com/@ImpossibleAngular
 - [Dynamic Injector](#Dynamic-Injector)
 - [Dynamic @Input](#Dynamic-Input)
 - [@Self vs @Host](#Self-vs-Host)
-- [NodeJS run .ts](#NodeJS-run-.ts)
+- [NodeJS run ts](#NodeJS-run-ts)
 
 ## Dynamic Providers
 
@@ -332,7 +332,7 @@ export class ItemComponent {
 }
 ```
 
-## NodeJS run .ts
+## NodeJS run ts
 ```bash
 mkdir nodets && cd nodets
 npm init --yes

@@ -7,6 +7,8 @@
 
 **Briefly**: To resolve circular dependency use `forwardRef`
 
+**Source** `forward-ref.ts`
+
 **Usage:**
 ```HTML
 <app-parent></app-parent>`
@@ -64,6 +66,8 @@ export class ParentComponent {
 ### Simplified implementation of ValueControlAccessor
 
 **Briefly**: This simplified implementation of ControlValueAccessor is designed to illustrate key Angular concepts, such as Dependency Injection, and core JavaScript techniques, including closures and callback functions.
+
+**Source** `my-control-accessor.ts`
 
 **Usage:**
 ```HTML

@@ -1,7 +1,7 @@
 # Angular examples
 
 - [Circular dependency with forwardRef](#Circular-dependency-with-forwardRef)
-- [Simplified implementation of ValueControlAccessor](Simplified-implementation-of-ValueControlAccessor)
+- [Simplified implementation of ValueControlAccessor](#Simplified-implementation-of-ValueControlAccessor)
 
 ### Circular dependency with forwardRef
 

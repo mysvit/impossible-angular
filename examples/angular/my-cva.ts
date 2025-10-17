@@ -1,7 +1,7 @@
 // Angular Examples v20.x.x
 // forwardRef & circular dependency
 
-// This simplified implementation of ControlValueAccessor is designed to illustrate key Angular concepts,
+// This simplified implementation of ControlValueAccessor (CVA) is designed to illustrate key Angular concepts,
 // such as Dependency Injection, and core JavaScript techniques, including closures and callback functions.
 
 // How it works.

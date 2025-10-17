@@ -1,6 +1,7 @@
 # Angular examples
 
 - [Circular dependency with forwardRef](#Circular-dependency-with-forwardRef)
+- [Simplified implementation of ValueControlAccessor](Simplified-implementation-of-ValueControlAccessor)
 
 ### Circular dependency with forwardRef
 
@@ -59,3 +60,17 @@ export class ParentComponent {
     }
 }
 ```
+
+### Simplified implementation of ValueControlAccessor
+
+**Briefly**: This simplified implementation of ControlValueAccessor is designed to illustrate key Angular concepts, such as Dependency Injection, and core JavaScript techniques, including closures and callback functions.
+
+**Usage:**
+```HTML
+<app-my-form></app-my-form>`
+```
+
+**Hot it works.**
+The component registered a provider that references itself (using forwardRef and useExisting), allowing it to serve as the value accessor and implement the necessary functions for form change tracking.
+The directive uses the host component's reference to inject it , to apply FormControl's value to the host component
+ and register callback functions (base on interface implementation) for change detection and validation.

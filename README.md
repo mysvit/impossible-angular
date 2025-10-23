@@ -2,12 +2,17 @@
 
 Source codes from youtube chnage https://www.youtube.com/@ImpossibleAngular
 
-- [Dynamic Providers](#Dynamic-Providers)
-- [Dynamic Injector](#Dynamic-Injector)
-- [Dynamic @Input](#Dynamic-Input)
-- [@Self vs @Host](#Self-vs-Host)
+- [Impossible Angular Youtube chanel](#Impossible-angular)
+  - [Dynamic Providers](#Dynamic-Providers)
+  - [Dynamic Injector](#Dynamic-Injector)
+  - [Dynamic @Input](#Dynamic-Input)
+  - [@Self vs @Host](#Self-vs-Host)
+- [Angular examples](examples/angular/README.md)
+- [Node.js examples](examples/node/README.md)
 
 ## Dynamic Providers
+
+[**Source file:** dynamic.providers.ts](dynamic.providers.ts)
 
 **Briefly**: Services dynamically injected into providers. Directive share providers with a component and
 `createComponent()` method can add directive to component in runtime.
@@ -101,6 +106,8 @@ export class WidgetContainerComponent {
 
 ## Dynamic Injector
 
+[**Source file:** dynamic-injector.ts](dynamic-injector.ts)
+
 **Briefly**: Service injection inside class's method or event
 Using global variable and app injector inside bootstrapApplication(...)
 
@@ -186,6 +193,8 @@ export class DelMessageComponent {
 
 ## Dynamic @Input
 
+[**Source file:** dynamic-input.ts](dynamic-input.ts)
+
 **Briefly**: When applying @Input to a component created via ViewContainerRef, you need to use the setInput() method. However, this approach does not dynamically update the @Input properties in the same way that template-based bindings do.
 
 How to make it possible?
@@ -253,6 +262,8 @@ export class DynInputComponent {
 
 
 ## @Self vs @Host
+
+[**Source file:** self-vs-host.ts](self-vs-host.ts)
 
 **Briefly**: One crucial difference between `self` and `host` parameters for service injection it is projection.
 

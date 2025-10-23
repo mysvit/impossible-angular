@@ -1,9 +1,9 @@
-# Node.js examples
+## Node.js examples
 
-- [NodeJS run ts](#NodeJS-run-ts)
-- [NodeJS Main thread starvation](#NodeJS-Main-thread-starvation)
+- [Run *.ts files](#run-ts-files)
+- [Main thread starvation](#Main-thread-starvation)
 
-### NodeJS run ts
+### Run *.ts files
 ```bash
 mkdir nodets && cd nodets
 npm init --yes
@@ -11,9 +11,14 @@ echo "console.log('Hello NodeTS.')" > 'server.ts'
 node --experimental-strip-types server.ts
 ```
 
-### NodeJS Main thread starvation
-Simulate a main thread starvation in nodejs. Use a profile to find a bottleneck. Use a worker to avoid a main thread starvation. 
+### Main thread starvation
+
+[**Source project:** main-thread](main-thread)
+
+**Briefly**: Simulate a main thread starvation in nodejs. Use a profile to find a bottleneck. Use a worker to avoid a main thread starvation. 
 Source code in main-thred folder.
+
+**Usage:**
 
 Serve and debug
 ```bash

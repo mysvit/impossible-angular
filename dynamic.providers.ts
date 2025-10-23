@@ -1,10 +1,12 @@
 // Impossible Angular v20.x.x
 // Dynamic Providers
+// Author: Sergii Lutchyn
 
 // Services dynamically injected into providers
 // Directive share providers with a component and
 // createComponent method can add directive to component in runtime
 
+//  Usage:
 //  use <app-widget-container></app-widget-container>
 
 import { Component, Directive, inject, Injectable, InjectionToken, ViewContainerRef } from '@angular/core'

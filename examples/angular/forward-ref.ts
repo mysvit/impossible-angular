@@ -1,9 +1,11 @@
-// Angular Examples v20.x.x
+// Impossible Angular v20.x.x
 // forwardRef & circular dependency
+// Author: Sergii Lutchyn
 
 // Get parent's method from child
 
-// start point <app-parent></app-parent>
+//  Usage:
+// <app-parent></app-parent>
 
 import { Component, forwardRef, inject, InjectionToken } from '@angular/core'
 

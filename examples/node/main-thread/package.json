@@ -9,7 +9,7 @@
     "parce": "node --prof-process isolate-0x1671c000-65753-v8.log > processed.txt"
   },
   "keywords": [],
-  "author": "",
+  "author": "Sergii Lutchyn",
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0"

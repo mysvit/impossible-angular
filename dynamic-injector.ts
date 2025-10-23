@@ -1,10 +1,12 @@
 // Impossible Angular v20.x.x
 // Dynamic Injector
+// Dynamic Injector
+// Author: Sergii Lutchyn
 
 // Service injection to class's method or event
 // Using global variable and injector from boot App
 
-//  Add to root template
+//  Usage:
 // <app-toolbar></app-toolbar>
 // <app-add-message></app-add-message>
 // <app-del-message></app-del-message>

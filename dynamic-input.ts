@@ -1,9 +1,11 @@
 // Impossible Angular v20.x.x
 // Dynamic Input
+// Dynamic @Input
+// Author: Sergii Lutchyn
 
 // Dynamic input for component created by ViewContainerRef
 
-//  Add to root template
+//  Usage:
 // <app-dyn-input></app-dyn-input>
 
 import {Component, effect, inject, input, model, signal, ViewContainerRef, WritableSignal} from '@angular/core';

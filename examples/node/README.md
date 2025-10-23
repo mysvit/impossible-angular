@@ -1,7 +1,7 @@
 ## Node.js examples
 
 - [Run *.ts files](#run-ts-files)
-- [Main thread starvation](#Main-thread-starvation)
+- [Main thread starvation](#main-thread-starvation)
 
 ### Run *.ts files
 ```bash

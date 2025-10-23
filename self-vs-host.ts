@@ -1,10 +1,12 @@
 // Impossible Angular v20.x.x
 // @Host vs @Self
+// @Self vs @Host
+// Author: Sergii Lutchyn
 
 // One crucial difference between `self` and `host` parameters for service injection.
 // It is projection!
 
-//  Add to root template
+//  Usage:
 // <app-item appTestService label="Parent" color="grey">
 //   <app-item appTestService label="Projected 1st level" color="skyblue">
 //     <app-item label="Projected 2nd level" color="lime">

@@ -1,7 +1,7 @@
 ## Angular examples
 
-- [Circular dependency with forwardRef](#Circular-dependency-with-forwardRef)
-- [Simplified implementation of ValueControlAccessor](#Simplified-implementation-of-ValueControlAccessor)
+- [Circular dependency with forwardRef](#circular-dependency-with-forwardref)
+- [Simplified implementation of ControlValueAccessor (CVA)](#simplified-implementation-of-controlvalueaccessor-cva)
 
 ### Circular dependency with forwardRef
 
@@ -63,11 +63,11 @@ export class ParentComponent {
 }
 ```
 
-### Simplified implementation of ValueControlAccessor
+### Simplified implementation of ControlValueAccessor (CVA)
 
 [**Source file:** my-cva.ts](my-cva.ts)
 
-**Briefly**: This simplified implementation of ControlValueAccessor (CVA) is designed to illustrate key Angular concepts, such as Dependency Injection, and core JavaScript techniques, including closures and callback functions.
+**Briefly**: This example is designed to illustrate key Angular concepts, such as Dependency Injection, and core JavaScript techniques, including closures and callback functions.
 
 **Usage:**
 ```HTML

@@ -1,7 +1,8 @@
-// Angular Examples v20.x.x
-// forwardRef & circular dependency
+// Impossible Angular v20.x.x
+// Simplified implementation of ControlValueAccessor (CVA)
+// Author: Sergii Lutchyn
 
-// This simplified implementation of ControlValueAccessor (CVA) is designed to illustrate key Angular concepts,
+// This example is designed to illustrate key Angular concepts,
 // such as Dependency Injection, and core JavaScript techniques, including closures and callback functions.
 
 // How it works.
@@ -10,7 +11,8 @@
 //    The directive uses the host component's reference to inject it , to apply FormControl's value to the host component
 // and register callback functions (base on interface implementation) for change detection and validation.
 
-// start point <app-my-form></app-my-form>
+//  Usage:
+//  <app-my-form></app-my-form>
 
 import { Component, Directive, effect, forwardRef, inject, InjectionToken, input, signal, WritableSignal } from '@angular/core'
 import { FormsModule } from '@angular/forms'

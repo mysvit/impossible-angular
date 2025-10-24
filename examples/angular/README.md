@@ -2,6 +2,7 @@
 
 - [Circular dependency with forwardRef](#circular-dependency-with-forwardref)
 - [Simplified implementation of ControlValueAccessor (CVA)](#simplified-implementation-of-controlvalueaccessor-cva)
+- [Directives](#directives)
 
 ### Circular dependency with forwardRef
 
@@ -78,3 +79,12 @@ export class ParentComponent {
 The component registered a provider that references itself (using forwardRef and useExisting), allowing it to serve as the value accessor and implement the necessary functions for form change tracking.
 The directive uses the host component's reference to inject it , to apply FormControl's value to the host component
  and register callback functions (base on interface implementation) for change detection and validation.
+
+### Directives
+
+[**Source file:** directives.ts](directives.ts)
+
+**Briefly**: Example of attribute and structural directives 
+
+**Usage:**
+See the comments in the file.

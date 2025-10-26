@@ -1,6 +1,8 @@
-import { Attribute, Directive, effect, ElementRef, HostListener, inject, Injectable, input, Renderer2, signal, TemplateRef, ViewContainerRef } from '@angular/core'
+// Impossible Angular v20.x.x
+// Attribute and structural directives
+// Author: Sergii Lutchyn
 
-// Attribute directives
+import { Attribute, Directive, effect, ElementRef, HostListener, inject, Injectable, input, Renderer2, signal, TemplateRef, ViewContainerRef } from '@angular/core'
 
 // Color attribute for h1 selector
 // Usage:

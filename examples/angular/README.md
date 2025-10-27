@@ -3,6 +3,7 @@
 - [Circular dependency with forwardRef](#circular-dependency-with-forwardref)
 - [Simplified implementation of ControlValueAccessor (CVA)](#simplified-implementation-of-controlvalueaccessor-cva)
 - [Directives](#directives)
+- [RxJS](#rxjs)
 
 ### Circular dependency with forwardRef
 
@@ -84,7 +85,33 @@ The directive uses the host component's reference to inject it , to apply FormCo
 
 [**Source file:** directives.ts](directives.ts)
 
-**Briefly**: Example of attribute and structural directives 
+**Briefly**: Examples of attribute and structural directives. 
 
 **Usage:**
 See the comments in the file.
+
+### RxJS
+
+[**Source file:** rxjs.ts](rxjs.ts)
+
+**Briefly**: An example of common usage of RxJS functions.
+
+**Usage:** In the constructor uncomment the function that you want to run.
+```angular2html
+<app-rxjs></app-rxjs>
+```
+* **of**: emits an array as a single value and as separate values as well.
+* **from**: emits contents of array as separate values.
+* **retry**: an error handling operator that resubscribes to the source observable if it throws an error.
+* **catchError**: an error handling operator that intercepts an error in the observable stream.
+* **Higher order mapping**: to get the result from one Observable and send it to another. Using switchMap, mergeMap, concatMap depends on the incoming stream.
+* **switchMap** - cancels any previous inner observable subscriptions that are still in progress.
+* **mergeMap** - subscribes to all inner observables concurrently.
+* **concatMap** - subscribes to inner observables one at a time.
+* **forkJoin** - runs all observables in parallel and waits for all of them to complete, return array of values.
+* **concat** - chains observables together, running them sequentially, one-by-one manner.
+* **takeUntil** - cancel subscription with teardown subject.
+* **takeWhile** - cancel subscription when condition is false.
+* **take** - take n values from stream.
+* **scan** - handling continuous accumulation and emission of values, similar to .reduce((acc, cur)) function in array.
+* **withLatestFrom** - combine main stream with one or more others.

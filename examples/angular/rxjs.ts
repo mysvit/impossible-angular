@@ -30,7 +30,7 @@ import { tap } from 'rxjs/operators'
 export class RxjsComponent {
 
     constructor() {
-        static_of_from()
+        // static_of_from()
         // map_retry_catchError()
         // higherOrderMapping()
         // map_switchMap()

@@ -1,3 +1,7 @@
+// Impossible Angular v20.x.x
+// An example of common usage of RxJS functions.
+// Author: Sergii Lutchyn
+
 import { Component, signal, WritableSignal } from '@angular/core'
 import { toObservable } from '@angular/core/rxjs-interop'
 import {
@@ -38,6 +42,7 @@ export class RxjsComponent {
         // map_concatMap()
         // static_forkJoin()
         // static_concat()
+        // tick() // take, takeWhile
         // takeUntil_Signal()
         // takeUntil_Subject()
         // static_scan()

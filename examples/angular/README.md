@@ -110,8 +110,8 @@ See the comments in the file.
 * **concatMap** - subscribes to inner observables one at a time.
 * **forkJoin** - runs all observables in parallel and waits for all of them to complete, return array of values.
 * **concat** - chains observables together, running them sequentially, one-by-one manner.
+* **take** - take n values from stream.
 * **takeUntil** - cancel subscription with teardown subject.
 * **takeWhile** - cancel subscription when condition is false.
-* **take** - take n values from stream.
 * **scan** - handling continuous accumulation and emission of values, similar to .reduce((acc, cur)) function in array.
 * **withLatestFrom** - combine main stream with one or more others.

@@ -1,0 +1,20 @@
+{
+  "name": "main-thread-starvation",
+  "version": "1.0.0",
+  "description": "Main thread starvation",
+  "type": "module",
+  "scripts": {
+    "stat": "node --experimental-strip-types --inspect server.ts",
+    "prof": "node --experimental-strip-types --prof server.ts",
+    "parce": "node --prof-process isolate-0x1671c000-65753-v8.log > processed.txt"
+  },
+  "keywords": [],
+  "author": "Sergii Lutchyn",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.1",
+    "typescript": "^5.9.3"
+  }
+}

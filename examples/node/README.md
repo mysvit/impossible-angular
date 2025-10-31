@@ -2,6 +2,7 @@
 
 - [Run *.ts files](#run-ts-files)
 - [Main thread starvation](#main-thread-starvation)
+- [Update array object](#update-array-object)
 
 ### Run *.ts files
 ```bash
@@ -131,3 +132,15 @@ export function fibonacci(n: number): number {
     return fibonacci(n - 1) + fibonacci(n - 2)
 }
 ```
+
+### Update array object
+
+[**Source project:** functions](functions)
+
+[**Source file:** array-functions.ts](functions/src/array-functions.ts)
+
+All this functions used to update one object in array by `id` in different way and test performance.
+
+Mutability and immutability.
+
+

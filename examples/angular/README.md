@@ -1,9 +1,34 @@
 ## Angular examples
 
+- [ng command](#ng-command)
 - [Circular dependency with forwardRef](#circular-dependency-with-forwardref)
 - [Simplified implementation of ControlValueAccessor (CVA)](#simplified-implementation-of-controlvalueaccessor-cva)
 - [Directives](#directives)
 - [RxJS](#rxjs)
+- [NgRx](#ngrx)
+
+### ng command
+
+Install latest `angular cli`
+
+``` shell
+npm install --location=global @angular/cli@latest
+```
+
+Then new minimalistic `test` project.
+```shell
+ng new test --minimal --zoneless --style scss --ssr false --ai-config none
+```
+
+Check updates
+```shell
+ng update
+```
+
+Update angular packages
+```shell
+ng update @angular/cli @angular/core
+```
 
 ### Circular dependency with forwardRef
 
@@ -115,3 +140,15 @@ See the comments in the file.
 * **takeWhile** - cancel subscription when condition is false.
 * **scan** - handling continuous accumulation and emission of values, similar to .reduce((acc, cur)) function in array.
 * **withLatestFrom** - combine main stream with one or more others.
+
+### NgRx
+
+Install NgRx store
+```shell
+ng add @ngrx/store@latest
+```
+
+Install NgRx store devtools in project. In Chrome add extension `Redux DevTools`
+```shell
+ng add @ngrx/store-devtools@latest
+```

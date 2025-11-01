@@ -23,6 +23,7 @@ import {
     switchMap, take,
     takeUntil,
     takeWhile,
+    timer,
     withLatestFrom
 } from 'rxjs'
 import { tap } from 'rxjs/operators'
@@ -249,5 +250,14 @@ const map_withLatestFrom = () => {
     clicks.pipe(
         withLatestFrom(timer),
         tap((value) => console.warn(`click ${value[0]}s`, `stream data ${value[1]}, `))
+    ).subscribe()
+}
+
+// execute function sequentially with daley
+const timerTap = () => {
+    timer(2000).pipe(
+        tap(() => console.log('Call after 2s')),
+        delay(2000),
+        tap(() => console.log('Call after another 2s'))
     ).subscribe()
 }

@@ -12,6 +12,10 @@
  */
 
 
+export const updateArrayById_filter = <T extends { id: number | string }>(arr: Array<T>, obj: T): T[] => {
+    return arr.filter(f => f.id !== obj.id)
+}
+
 /**
  * Update array object by id using map
  * @param arr
@@ -118,7 +122,7 @@ const consoleSpeed = (str: string, speed: number) => {
 export const updateArrayTest = () => {
 
     const ARRAY_SIZE = 100100
-    const ARRAY_STEP = 10
+    const ARRAY_STEP = 20
     console.warn('Array update and destruction performance test')
     console.warn('Array size: ', ARRAY_SIZE, 'Update times: ', ARRAY_SIZE / ARRAY_STEP)
 
@@ -182,6 +186,14 @@ export const updateArrayTest = () => {
     arrayFor = performance.now() - arrayFor
     consoleSpeed('performance for .......................... ', arrayFor)
 
+    let arrayFilter = performance.now()
+    for (let i = 0; i < ARRAY_SIZE; i += ARRAY_STEP) {
+        updateArrayById_filter(arr, newObj(i))
+    }
+    arrayFilter = performance.now() - arrayFilter
+    consoleSpeed('performance filter ...................... ', arrayFilter)
+
+
     console.warn()
     console.warn('compare to map (+):faster (-):slower')
     console.warn(`just by index destructing .... ${performancePercent(arrayMap, arrayIndexMap)}%, `)
@@ -191,4 +203,5 @@ export const updateArrayTest = () => {
     console.warn(`findIndex destructing ........ ${performancePercent(arrayMap, arrayFindIndex)}%`)
     console.warn(`findIndex concat ............. ${performancePercent(arrayMap, arrayFindIndexCon)}%`)
     console.warn(`for push ..................... ${performancePercent(arrayMap, arrayFor)}%`)
+    console.warn(`filter ....................... ${performancePercent(arrayMap, arrayFilter)}%`)
 }
